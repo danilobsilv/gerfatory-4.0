@@ -9,7 +9,7 @@ app = Flask(__name__)
 class RequestTimeMiddleware:
     def __init__(self, app):
         self.app = app
-        self.file_name = "request_log.txt"
+        self.file_name = "log_requests.txt"
         self.counter = 0
 
       # Método chamado quando uma requisição é recebida pela aplicação
@@ -33,7 +33,7 @@ def index():
     response = f"REQUISIÇÃO! Request ID: {request_id}, Request Time: {request_time}"
     
     # Grava a informação no arquivo de texto
-    with open("request_log.txt", "a") as f:
+    with open("questão 5\log_requests.txt", "a") as f:
         f.write(f"Request ID: {request_id}, Request Time: {request_time}\n")
     
     return response
